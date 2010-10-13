@@ -5,9 +5,6 @@ describe PagesController do
 	render_views
 	
 	before(:each) do
-		#
-		#	Define base title here
-		#
 		@base_title = "Ruby on Rails Tutorial Sample App | "
 	end
 
