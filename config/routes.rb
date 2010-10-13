@@ -6,7 +6,7 @@ SampleApp::Application.routes.draw do
 	root :to => 'pages#home'
 	
 	# match '/', :to => 'pages#home' not necessary because rails has special
-	# instructions for the root URL /
+	# instructions for the root URL '/' see above.
 	
 	# get 'pages/home'
 	# get 'pages/contact'
