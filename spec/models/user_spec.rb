@@ -41,6 +41,18 @@ describe User do
 			invalid_email_user.should_not be_valid
 		end
 	end
-		
-
+	
+	it "should reject duplicate email addresses" do
+		# Put a user with a given email address into the databade.
+		User.create!(@attr)
+		user_with_duplicate_email = User.new(@attr)
+		user_with_duplicate_email.should_not be_valid
+	end
+	
+	it "should reject email addresses identical up to case" do
+		upcased_email = @attr[:email].upcase
+		User.create!(@attr.merge(:email => upcased_email))
+		user_with_duplicate_email = User.new(@attr)
+		user_with_duplicate_email.should_not be_valid
+	end
 end
